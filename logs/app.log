@@ -1,0 +1,6 @@
+INFO:root:Request: GET http://127.0.0.1:5000/docs
+INFO:root:Response status: 200
+INFO:root:Request: GET http://127.0.0.1:5000/openapi.json
+INFO:root:Response status: 200
+INFO:root:Request: GET http://127.0.0.1:5000/openapi.json
+INFO:root:Response status: 200
