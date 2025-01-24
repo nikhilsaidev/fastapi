@@ -1,13 +1,12 @@
 from fastapi import FastAPI
-from app.middleware.log_middleware import LogMiddleware
-from app.middleware.error_handler import ErrorHandler
+
 from app.controllers.user_controller import router as user_router
+from app.utils.helpers import LoggerHelper
 
 app = FastAPI(title="User Management API")
 
-# Add middleware for logging and error handling
-app.add_middleware(LogMiddleware)
-app.add_exception_handler(Exception, ErrorHandler.handle_exception)
+LoggerHelper.setup_logging()
+
 
 # Include user-related routes
 app.include_router(user_router, prefix="/users", tags=["Users"])
